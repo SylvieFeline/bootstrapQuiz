@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+header, footer{
+    padding: 1rem 0;
+}
+.container{
+    background-image: linear-gradient(to bottom,rgb(139, 139, 248),rgb(209, 209, 245));
+    
+}
+header .icone{
+    margin-top: 2rem;
+}
+h1{
+    text-align: center;
+    margin: 1rem 0;
+}
+input[type=submit]{
+    background-color: blue;
+    color: white;
+}
+

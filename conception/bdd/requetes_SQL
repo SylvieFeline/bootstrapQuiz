@@ -1,0 +1,74 @@
+DROP TABLE IF EXISTS quiz ; 
+CREATE TABLE quiz (id_quiz BIGINT AUTO_INCREMENT NOT NULL, 
+titre_quiz VARCHAR(255), 
+date_crea_quiz DATETIME, 
+date_modif_quiz DATETIME, 
+id_categorie INT NOT NULL, 
+id_statutQuiz INT NOT NULL, 
+id_membre INT NOT NULL, 
+PRIMARY KEY (id_quiz)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS categorie ; 
+CREATE TABLE categorie (id_categorie BIGINT AUTO_INCREMENT NOT NULL, 
+nom_categorie VARCHAR(255), 
+PRIMARY KEY (id_categorie)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS question ; 
+CREATE TABLE question (id_question BIGINT AUTO_INCREMENT NOT NULL, 
+libelle_question VARCHAR(255), 
+id_quiz INT NOT NULL, 
+PRIMARY KEY (id_question)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS choix ; 
+CREATE TABLE choix (id_choix INT(11) AUTO_INCREMENT NOT NULL, 
+libelle_choix VARCHAR(255), 
+id_question INT NOT NULL, 
+id_boleen INT NOT NULL, 
+PRIMARY KEY (id_choix)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS boleen ; 
+CREATE TABLE boleen (id_boleen INT(11) AUTO_INCREMENT NOT NULL, 
+nom_boleen VARCHAR(10), 
+PRIMARY KEY (id_boleen)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS membre ; 
+CREATE TABLE membre (id_membre INT(11) AUTO_INCREMENT NOT NULL, 
+pseudo_membre VARCHAR(100), 
+prenom_membre VARCHAR(100), 
+nom_membre VARCHAR(100), 
+email_membre VARCHAR(100), 
+password_membre VARCHAR(100), 
+date_inscript DATETIME,
+id_statutMembre INT NOT NULL, 
+PRIMARY KEY (id_membre)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS note ; 
+CREATE TABLE note (id_note INT(11) AUTO_INCREMENT NOT NULL, 
+valeur_note INTEGER(10), 
+PRIMARY KEY (id_note)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS statutQuiz ; 
+CREATE TABLE statutQuiz (id_statutQuiz INT(11) AUTO_INCREMENT NOT NULL, 
+nom_statutQuiz VARCHAR(100), 
+PRIMARY KEY (id_statutQuiz)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS statutMembre ; 
+CREATE TABLE statutMembre (id_statutMembre INT(11) AUTO_INCREMENT NOT NULL, 
+nom_statutMembre VARCHAR(100), 
+PRIMARY KEY (id_statutMembre)) ENGINE=InnoDB;  
+
+DROP TABLE IF EXISTS recoit ; 
+CREATE TABLE recoit (id_quiz INT(11) AUTO_INCREMENT NOT NULL, 
+id_note INT NOT NULL, 
+compteur_recoit INTEGER(10), 
+PRIMARY KEY (id_quiz,  id_note)) ENGINE=InnoDB;  
+
+ALTER TABLE quiz ADD CONSTRAINT FK_quiz_id_categorie FOREIGN KEY (id_categorie) REFERENCES categorie (id_categorie); 
+ALTER TABLE quiz ADD CONSTRAINT FK_quiz_id_statutQuiz FOREIGN KEY (id_statutQuiz) REFERENCES statutQuiz (id_statutQuiz); 
+ALTER TABLE quiz ADD CONSTRAINT FK_quiz_id_membre FOREIGN KEY (id_membre) REFERENCES membre (id_membre); 
+ALTER TABLE question ADD CONSTRAINT FK_question_id_quiz FOREIGN KEY (id_quiz) REFERENCES quiz (id_quiz); 
+ALTER TABLE choix ADD CONSTRAINT FK_choix_id_question FOREIGN KEY (id_question) REFERENCES question (id_question); 
+ALTER TABLE choix ADD CONSTRAINT FK_choix_id_boleen FOREIGN KEY (id_boleen) REFERENCES boleen (id_boleen); 
+ALTER TABLE membre ADD CONSTRAINT FK_membre_id_statutMembre FOREIGN KEY (id_statutMembre) REFERENCES statutMembre (id_statutMembre); 
+ALTER TABLE recoit ADD CONSTRAINT FK_recoit_id_quiz FOREIGN KEY (id_quiz) REFERENCES quiz (id_quiz); 
+ALTER TABLE recoit ADD CONSTRAINT FK_recoit_id_note FOREIGN KEY (id_note) REFERENCES note (id_note); 
