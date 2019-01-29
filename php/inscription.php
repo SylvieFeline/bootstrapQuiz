@@ -23,7 +23,7 @@
 
                 <h1>Inscription</h1>
 
-                <form action="" method="post">
+                <form action="../request/trt_inscript.php" method="post" >
 
                     <div class="form-group">
                         <label for="pseudo">Pseudo : </label>
@@ -31,30 +31,30 @@
                     </div>
                     <div class="form-group">
                         <label for="nom">Nom : </label>
-                        <input type="text" name="nom" class="form-control" required>
+                        <input type="text" name="nom" class="form-control" onblur="verifNom(this)" required>
                     </div>
                     <div class="form-group">
                         <label for="prenom">Prénom : </label>
-                        <input type="text" name="prenom" class="form-control" required>
+                        <input type="text" name="prenom" class="form-control" onblur="verifNom(this)" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email : </label>
-                        <input type="email" name="email" class="form-control" required>
+                        <input type="email" name="email" class="form-control" onblur="verifMail(this)" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Mot de passe : </label>
-                        <input type="password" name="pwd" class="form-control" required>
+                        <input type="password" name="pwd" class="form-control" onblur="verifPsw(this)" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Confirmation du mot de passe : </label>
-                        <input type="password" name="pwd2" class="form-control" required>
+                        <input type="password" name="pwd2" class="form-control" onblur="verifPsw2(this)" required>
                     </div>
-                    <input class="btn btn-block btn-lg" type="submit" value="s'inscrire">
+                    <input class="btn btn-block btn-lg" type="submit" value="Je m'inscris">
 
                 </form>
-
-                <?php include("../request/trt_inscript.php") ?>
-
+                <div class="text-center text-primary">
+                    <?php echo $_SESSION['inscript']; ?>
+                </div>
             </div>
         </section>
 
@@ -65,7 +65,7 @@
     </div>
 
     
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- <script src="../bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="../js/inscript.js"></script>
 </body>
 </html>

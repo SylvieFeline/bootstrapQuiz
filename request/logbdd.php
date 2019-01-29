@@ -1,6 +1,6 @@
 <?php
-	function connectBdd()
-	{
+	//function connectBdd()
+	//{
 		$dbn = "mysql:dbname=quiz;host=127.0.0.1";
 		$user = "sylvieg";
 		$pass = "MySQL_gs18";
@@ -15,6 +15,6 @@
 			echo "Connexion à la base de donnée échouée : " . $e->getMessage();
 		}
 
-		return $bdd;
-	}
+	//	return $bdd;
+	//}
 ?>

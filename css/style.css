@@ -18,5 +18,6 @@ h1{
 input[type=submit]{
     background-color: blue;
     color: white;
+    margin-top: 0.5rem;
 }
 
