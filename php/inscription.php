@@ -29,7 +29,8 @@
 
                     <div class="form-group">
                         <label for="pseudo">Pseudo : </label>
-                        <input type="text" name="pseudo" class="form-control" required>
+                        <input type="text" name="pseudo" class="form-control" id="pseudo"  required>
+                        <span id="feedback"></span>
                     </div>
                     <div class="form-group">
                         <label for="nom">Nom : </label>
@@ -68,6 +69,7 @@
 
     
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+
     <script src="../js/inscript.js"></script>
 </body>
 </html>

@@ -11,6 +11,22 @@ function surligne(champ, erreur) {
      }
  }
 
+// vérification si pseudo pas déjà dans base de donnée (avec AJAX
+// $(document).ready(function(){
+//     $('#pseudo').keyup(function(){
+//         var pseudo = $('#pseudo').val();
+//         pseudo = $.trim(pseudo);
+//         if (pseudo!= ""){
+//             $.post('../request/post.php',{pseudo:pseudo},function(data){
+//                 $('#feedback').text(data);
+//             });
+//         } else {
+//             $('#feedback').text("veuillez saisir un pseudo");
+//         }
+//     });
+// });
+    
+
 // nom ou prénom sans chiffre ou  caractères spéciaux
 function verifNom(champ){
     for(var i = 0; i < champ.value.length; i++){

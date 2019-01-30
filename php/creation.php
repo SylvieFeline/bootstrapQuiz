@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Accueil</title>
+    <title>Créer un Quiz</title>
 </head>
 <body>
 
@@ -20,14 +20,24 @@
             <?php include ("../include/header.php");  ?>
         </header>
 
-        <section class="row">
-            <div class="col-12">
-            <?php echo "Bienvenue ".$_SESSION['prenomMembre']." ".$_SESSION['nomMembre']; ?>
+        <section class="row justify-content-center">
+            <div class="col-10">
+                <h1> Création d'un quiz</h1>
+                <p>Pour commencer, donner un titre à votre quiz :</p>
+                <form action="../request/trt_creation.php" method="post">
+
+                    <div class="form-group">
+                        <label for="titre">Titre du quiz : </label>
+                        <input type="text" name="titre" class="form-control" required>
+                    </div>
+                    <input class="btn btn-block btn-lg" type="submit" value="Création">
+                </form>
+
+
+
+
             </div>
-
-
         </section>
-      
 
         <footer>
             <?php include ("../include/footer.php");  ?>
