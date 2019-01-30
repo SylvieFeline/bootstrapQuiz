@@ -20,4 +20,7 @@ input[type=submit]{
     color: white;
     margin-top: 0.5rem;
 }
+.form-group{
+    color : blue;
+}
 

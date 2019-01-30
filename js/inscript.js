@@ -7,7 +7,7 @@ function surligne(champ, erreur) {
        champ.style.color = "#712727";
      } else {
        champ.style.backgroundColor = "";
-       champ.style.color = "white";
+       champ.style.color = "";
      }
  }
 

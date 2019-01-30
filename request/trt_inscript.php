@@ -3,18 +3,18 @@ session_start();
 
 // vérification présence données
 
-if (isset($_POST['pseudo']) AND
-    isset($_POST['nom']) AND
-    isset($_POST['prenom']) AND
-    isset($_POST['email']) AND
-    isset($_POST['pwd']) AND
-    isset($_POST['pwd2'])) {
+if ((isset($_POST['pseudo']) && !empty($_POST['pseudo'])) AND
+    (isset($_POST['nom']) && !empty($_POST['nom'])) AND
+    (isset($_POST['prenom']) && !empty($_POST['prenom']))AND
+    (isset($_POST['email']) && !empty($_POST['email']))AND
+    (isset($_POST['pwd']) && !empty($_POST['pwd']))AND
+    (isset($_POST['pwd2']) && !empty($_POST['pwd2']))) {
 
 // récupération des données
-    $pseudo = $_POST['pseudo'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email = $_POST['email'];
+    $pseudo = htmlspecialchars($_POST['pseudo']);
+    $nom = htmlspecialchars($_POST['nom']);
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $email = htmlspecialchars($_POST['email']);
     $mdp = $_POST['pwd'];
     $mdp2 = $_POST['pwd2'];
 
@@ -22,7 +22,7 @@ if (isset($_POST['pseudo']) AND
     include("logbdd.php"); 
 
 // vérification pseudo pas déjà présent dans la base
-    // $verifPseudo = 'SELECT count(id_membre) FROM membre WHERE pseudo_membre ='.$pseudo;
+    // $verifPseudo = 'SELECT count(id_membre) FROM membre WHERE pseudo_membre ="'.$pseudo.'"';
     // $resPseudo = $bdd->query($verifPseudo);
     // $nbre1 = $resPseudo->fetch();
     //     if($nbre1 > 0){
@@ -34,7 +34,7 @@ if (isset($_POST['pseudo']) AND
     //     } else {
     
     // vérification email pas déjà présent dans la base
-        // $verifEmail = 'SELECT count(id_membre) FROM membre WHERE email_membre ='.$email;
+        // $verifEmail = 'SELECT count(id_membre) FROM membre WHERE email_membre ="'.$email.'"';
         // $resEmail = $bdd->query($verifEmail);
         // $nbre2 = $resPseudo->fetch();
         //     if($nbre2 > 0){
