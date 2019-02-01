@@ -63,9 +63,9 @@
                                 
                                     echo '<div >';
                                         echo '<label for="choix">Choix n°'.($a+1).' : </label>';
-                                        echo "<input type=\"text\" name=\"choix".$a."\" class=\"form-control\" value=\"".$choix['libelle_choix'][$a]."\">";
-                                        echo "<input type=\"hidden\" name=\"idChoix".$a."\" value=\"".$choix['id_choix'][$a]."\">";
-                                        echo "<select class=\"form-group\" name=\"boleen".$a."\" >";
+                                        echo "<input type=\"text\" name=\"choix".$idQuest.$a."\" class=\"form-control\" value=\"".$choix['libelle_choix'][$a]."\">";
+                                        echo "<input type=\"hidden\" name=\"idChoix".$idQuest.$a."\" value=\"".$choix['id_choix'][$a]."\">";
+                                        echo "<select class=\"form-group\" name=\"boleen".$idQuest.$a."\" >";
                                         echo    '<option value="'.$choix['id_boleen'][$a].'">'.$rep.'</option>';
                                         echo    '<option value="'.$autre.'">'.$repAutre.'</option>';
                                         echo '</select>';
@@ -77,10 +77,11 @@
 
                     <input class="btn btn-block btn-lg" type="submit" value="Enregistrer les modifications">
                 </form>
+                        <?php echo $_SESSION['messageModifQuiz']; ?>
 
                 <form action="../request/envoiQuiz.php" method="post">
                     <div class="form-group">
-                        <label for="commentaire">Ajouter un  commantaire :</label>
+                        <label for="commentaire">Ajouter un  commentaire :</label>
                         <textarea class="form-control" name="commentaire" rows="3"></textarea>
                     </div>
                     <input class="btn btn-block btn-blue btn-lg" type="sumit" value="Transmettre pour validation">
