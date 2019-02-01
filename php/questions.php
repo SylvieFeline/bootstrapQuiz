@@ -17,16 +17,24 @@
     <div class="container">
 
         <header>
-            <?php include ("../include/header.php");  ?>
+            <?php include ("../include/header.php");  
+            $_SESSION['titre'] = "Culture générale 1";
+            $_SESSION['idQuiz'] = 4;
+            
+            ?>
         </header>
 
         <section class="row justify-content-center">
             <div class="col-10">
-                <h1> Création d'un quiz</h1>
+                <h1 > Création d'un quiz</h1>
 
-                <p> Maintenant, ajouter les questions et leurs choix de réponses  à votre quiz :</p>
-                
-                <?php echo $_SESSION['titre'] ?>
+                     
+                <h2>Votre quiz : <?php echo $_SESSION['titre'] ?></h2>
+               
+
+                <p> Maintenant, ajouter les questions et leurs choix de réponses  à votre quiz, 
+                en précisant s'il s'agit de la bonne réponse ou pas :</p>
+            
 
                 <form action="../request/trt_questions.php" method="post">
 
@@ -34,10 +42,28 @@
                         <label for="question">Libellé de la question : </label>
                         <input type="text" name="question" class="form-control" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="nombreChoix">Sélectionner le nombre de propositions : </label>
+                        <input type="hidden" name="choix1" class="form-control" required>
+                        <select class="form-group" name="nbreChoix" id="nbreChoix" >
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    <div id="afficheChoix"></div>
+                    
+
                     <input class="btn btn-block btn-lg" type="submit" value="Enregistrer">
                 </form>
-
-
+                
+                    <p> Si vous n'avez plus de questions à ajouter à votre quiz, 
+                        vérifiez celui-ci en cliquant sur le bouton ci-dessous :
+                    </p>
+                    <a class="btn btn-block btn-blue btn-lg" role="button" href="../request/trt_quiz.php">Voir le quiz fini</a>
 
 
             </div>
@@ -51,6 +77,6 @@
 
     
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/questions.js"></script>
 </body>
 </html>

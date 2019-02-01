@@ -20,8 +20,8 @@
             <?php include ("../include/header.php");  ?>
         </header>
 
-        <section class="row">
-            <div class="col-md-12">
+        <section class="row justify-content-center">
+            <div class="col-10">
 
             </div>
         </section>

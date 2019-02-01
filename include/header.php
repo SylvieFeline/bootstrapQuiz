@@ -23,7 +23,7 @@
 </div> -->
 
 
-    <nav class="nav nav-pills flex-column flex-sm-row bg-white">
+    <nav class="nav nav-pills flex-row bg-white">
       <a class="nav-link" href="../php/accueil.php">Accueil</a>
       <a class="nav-link" href="../php/inscription.php">Inscription</a>
       <?php  if (isset($_SESSION['pseudoMembre'])) {

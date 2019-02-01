@@ -1,3 +1,10 @@
+
+.btn-blue {
+    background-color: blue;
+    color: white;
+    border-color: blue;
+}
+
 body{
     background-color: black;
 }
@@ -5,15 +12,22 @@ header, footer{
     padding: 1rem 0;
 }
 .container{
-    background-image: linear-gradient(to bottom,rgb(139, 139, 248),rgb(209, 209, 245));
-    
+    background-image: linear-gradient(to bottom,rgb(139, 139, 248),rgb(209, 209, 245));  
 }
 header .icone{
     margin-top: 2rem;
 }
+nav, .btn{
+    margin: 1rem 0;
+}
 h1{
     text-align: center;
     margin: 1rem 0;
+    color : blue;
+}
+strong{
+    color: blue;
+    font-size: 1.5em;
 }
 input[type=submit]{
     background-color: blue;
@@ -23,4 +37,13 @@ input[type=submit]{
 .form-group, .nav-link{
     color : blue;
 }
-
+.border-blue{
+    border: 3px solid blue;
+    padding: 10px 10px 0 10px;
+    margin-bottom: 10px;
+}
+.white{
+    color:white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
