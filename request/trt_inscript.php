@@ -19,7 +19,7 @@ if ((isset($_POST['pseudo']) && !empty($_POST['pseudo'])) AND
     $mdp2 = $_POST['pwd2'];
     $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
 
-// vérification concordance des 2 mots de passe
+// seconde vérification concordance des 2 mots de passe
     if ($mdp != $mdp2) {
         $message = "Les 2 mots de passe sont différents !";
         $_SESSION['inscript'] = $message;
