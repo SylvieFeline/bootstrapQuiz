@@ -4,6 +4,11 @@
     color: white;
     border-color: blue;
 }
+.btn-m{
+    padding: 2px 5px;
+    margin: 0;
+    border-radius: 10px;
+}
 
 body{
     background-color: black;
@@ -19,6 +24,18 @@ header .icone{
 }
 nav, .btn{
     margin: 1rem 0;
+    border-radius: 1rem;
+}
+@media (min-width: 767.98px) {
+    .space-bet-md{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media (max-width: 767.98px) {
+    .w80{
+        width: 80%;
+    }
 }
 h1{
     text-align: center;
@@ -34,13 +51,14 @@ input[type=submit]{
     color: white;
     margin-top: 0.5rem;
 }
-.form-group, .nav-link{
+.form-group, .nav-link, a{
     color : blue;
 }
 .border-blue{
     border: 3px solid blue;
     padding: 10px 10px 0 10px;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 .white{
     color:white;

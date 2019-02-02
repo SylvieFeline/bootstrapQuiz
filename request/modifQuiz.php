@@ -13,6 +13,7 @@ include("logbdd.php");
 // vérification présence données , récupération  et requetes de mises à jour
 if (isset($_POST['titre']) && !empty($_POST['titre'])){
     $titre = htmlspecialchars($_POST['titre']);
+    $_SESSION['titre'] = $titre;
 
     $reqMajTitre = "UPDATE quiz SET titre_quiz = '".$titre."' WHERE id_quiz =".$idQuiz;
     $reqMajT = $bdd->prepare($reqMajTitre);   

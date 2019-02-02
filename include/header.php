@@ -13,6 +13,7 @@
             echo '<p class="text-center">'. $_SESSION["pseudoMembre"].' </p>';
         } else { 
             echo '<img class="img-fluid" src="../img/person-icone.png" alt="icone personnage" data-toggle="modal" data-target="#connectModal">';          
+            echo '<p class="text-center">connection </p>';
         } ?>        
     </div>
     
@@ -23,13 +24,45 @@
 </div> -->
 
 
-    <nav class="nav nav-pills flex-row bg-white">
-      <a class="nav-link" href="../php/accueil.php">Accueil</a>
-      <a class="nav-link" href="../php/inscription.php">Inscription</a>
-      <?php  if (isset($_SESSION['pseudoMembre'])) {
-        echo '<a class="nav-link" href="../php/creation.php">Créer un quiz</a>'; }?>
-      <?php if ((isset($_SESSION['pseudoMembre'])) && ($_SESSION['pseudoMembre'] == "admin")) { 
-        echo '<a class="nav-link" href="#">Gestion</a> ';} ?>  
+    <nav class="navbar bg-white navbar-expand-md sticky-top">
+        <a class="navbar-brand" href="#">
+        <img src="../img/quiz_petit.png" alt="logo" style="width:60px;"> </a>
+     
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span >
+                <img src="../img/icone_menu_bleu.png" alt="icone menu" style="width:40px;" >
+            </span>
+        </button>
+
+        <div class="collapse navbar-collapse space-bet-md" id="collapsibleNavbar">
+            <ul class="navbar-nav ">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="../php/accueil.php">Accueil</a>
+                    </li>
+            
+                <?php  if (isset($_SESSION['pseudoMembre'])) {
+                    echo '<li class="nav-item">';
+                        echo '<a class="nav-link" href="../php/profil.php">Mon profil</a>';
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                        echo '<a class="nav-link" href="../php/creation.php">Créer un quiz</a>';
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                        echo '<a class="nav-link" href="../php/voirQuiz.php">Voir mes quiz</a>'; 
+                    echo '</li>';
+                }?>
+                <?php if ((isset($_SESSION['pseudoMembre'])) && ($_SESSION['statutMembre'] == 1)) { 
+                    echo '<li class="nav-item">';
+                        echo '<a class="nav-link" href="../php/gestion.php">Gestion</a> '; 
+                    echo '</li>';
+                } ?> 
+            </ul>
+            <form class="form-inline" action="">
+                <input class="form-control w80 mr-sm-2" type="text" placeholder="Recherche">
+                <button class="btn-m btn-blue" type="submit"> <img src="../img/system-search-3.png" alt="loupe" style="width:30px;"></button>
+            </form>
+        </div>
     </nav>
 
 
@@ -56,6 +89,9 @@
                         <input class="btn btn-block btn-lg" type="submit" value="Connexion">
                     </form>
                     <?php   include ("../request/trt_connect.php"); ?>
+
+                    Pas encore membre ?
+                    <a class="btn btn-block btn-blue btn-lg" role="button" href="../php/inscription.php">S'inscrire</a>
                 </div>
             </div>
         </div>

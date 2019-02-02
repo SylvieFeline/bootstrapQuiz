@@ -33,6 +33,7 @@ if ((isset($_POST['email']) && !empty($_POST['email'])) AND
             $_SESSION['nomMembre'] = $infoMembre['nom_membre'];
             $_SESSION['prenomMembre'] = $infoMembre['prenom_membre'];
             $_SESSION['pseudoMembre'] = $infoMembre['pseudo_membre'];
+            $_SESSION['emailMembre'] = $infoMembre['email_membre'];
             $_SESSION['statutMembre'] = $infoMembre['id_statutMembre'];
             // redirection vers  page d'accueil
             header ('location: ../php/accueil.php');

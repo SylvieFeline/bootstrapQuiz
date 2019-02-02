@@ -23,7 +23,7 @@
         <section class="row justify-content-center">
             <div class="col-10">
 
-                <p>Veuillez vérifier vos saisies avant de le transmettre à la validation : </p>
+                <p>Veuillez vérifier vos saisies avant de transmettre votre quiz à la validation : </p>
 
                 <form action="../request/modifQuiz.php" method="post">
 
@@ -77,15 +77,17 @@
 
                     <input class="btn btn-block btn-lg" type="submit" value="Enregistrer les modifications">
                 </form>
-                        <?php echo $_SESSION['messageModifQuiz']; ?>
+                <?php echo $_SESSION['messageModifQuiz']; ?>
 
                 <form action="../request/envoiQuiz.php" method="post">
                     <div class="form-group">
-                        <label for="commentaire">Ajouter un  commentaire :</label>
+                        <label for="commentaire">Ajouter un  commentaire (facultatif) :</label>
                         <textarea class="form-control" name="commentaire" rows="3"></textarea>
                     </div>
-                    <input class="btn btn-block btn-blue btn-lg" type="sumit" value="Transmettre pour validation">
+                    <input class="btn btn-block btn-blue btn-lg" type="submit" value="Transmettre pour validation">
                 </form>
+                <?php echo $_SESSION['messageConfEnvoiQuiz']; ?>
+
             </div>
         </section>
 

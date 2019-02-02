@@ -33,7 +33,7 @@
                     <input class="btn btn-block btn-lg" type="submit" value="Création">
                 </form>
 
-
+                <?php echo $_SESSION['messageCreation'];  ?>
 
 
             </div>
