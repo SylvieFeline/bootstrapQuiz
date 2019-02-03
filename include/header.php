@@ -49,7 +49,7 @@
                         echo '<a class="nav-link" href="../php/creation.php">Créer un quiz</a>';
                     echo '</li>';
                     echo '<li class="nav-item">';
-                        echo '<a class="nav-link" href="../php/voirQuiz.php">Voir mes quiz</a>'; 
+                        echo '<a class="nav-link" href="../request/reqQuizMembre.php">Mes quiz</a>'; 
                     echo '</li>';
                 }?>
                 <?php if ((isset($_SESSION['pseudoMembre'])) && ($_SESSION['statutMembre'] == 1)) { 

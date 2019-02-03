@@ -52,7 +52,7 @@ for ($i=1; $i <= $nbreQuest; $i++){
     $resCh[$i] = $bdd->prepare($ch[$i]);
     $resCh[$i]->execute (array($id[$i]));
     $nbreCh[$i] = $resCh[$i]->rowCount();
-    echo "nbre choix = ".$nbreCh[$i]."<br>";
+    // echo "nbre choix = ".$nbreCh[$i]."<br>";
 }
 
 

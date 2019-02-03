@@ -1,4 +1,24 @@
 
+body{
+    background-color: black;
+    min-height: 100vh;
+}
+header, footer{
+    padding: 1rem 0;
+}
+.container{
+    background-image: linear-gradient(to bottom,rgb(139, 139, 248),rgb(209, 209, 245));  
+}
+section{
+    min-height: 60vh;
+}
+header .icone{
+    margin-top: 2rem;
+}
+nav, .btn{
+    margin: 1rem 0;
+    border-radius: 1rem;
+}
 .btn-blue {
     background-color: blue;
     color: white;
@@ -8,23 +28,6 @@
     padding: 2px 5px;
     margin: 0;
     border-radius: 10px;
-}
-
-body{
-    background-color: black;
-}
-header, footer{
-    padding: 1rem 0;
-}
-.container{
-    background-image: linear-gradient(to bottom,rgb(139, 139, 248),rgb(209, 209, 245));  
-}
-header .icone{
-    margin-top: 2rem;
-}
-nav, .btn{
-    margin: 1rem 0;
-    border-radius: 1rem;
 }
 @media (min-width: 767.98px) {
     .space-bet-md{
@@ -51,7 +54,7 @@ input[type=submit]{
     color: white;
     margin-top: 0.5rem;
 }
-.form-group, .nav-link, a{
+.form-group, .nav-link, a, .blue{
     color : blue;
 }
 .border-blue{
@@ -60,8 +63,18 @@ input[type=submit]{
     margin-bottom: 10px;
     border-radius: 10px;
 }
+.marg{
+    margin: 10px 10px;
+}
+.bg-bl{
+    background-color: rgb(209, 209, 245);
+    border-radius: 10px;
+}
 .white{
     color:white;
     font-size: 1.5em;
     font-weight: bold;
+}
+.black{
+    color:black;
 }

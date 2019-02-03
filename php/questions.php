@@ -45,8 +45,7 @@
 
                     <div class="form-group">
                         <label for="nombreChoix">Sélectionner le nombre de propositions : </label>
-                        <input type="hidden" name="choix1" class="form-control" required>
-                        <select class="form-group" name="nbreChoix" id="nbreChoix" >
+                        <select class="form-group" name="nbreChoix" id="nbreChoix" required >
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>

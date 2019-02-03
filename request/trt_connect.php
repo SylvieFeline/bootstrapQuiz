@@ -1,6 +1,6 @@
 <?php
 session_start();
-$mdpAdmin = 'admin18_QUIZ';
+// $mdpAdmin = 'admin18_QUIZ';
 // vérification présence données
 
 if ((isset($_POST['email']) && !empty($_POST['email'])) AND
@@ -17,11 +17,10 @@ if ((isset($_POST['email']) && !empty($_POST['email'])) AND
     $reqVerif = 'SELECT * FROM membre WHERE email_membre = ?';
   
     // préparation et execution de la requete 
-    $reqV = $bdd->prepare($reqVerif); 
-   
-    // $reqV -> execute (array($email, $mdpHash));  
+    $reqV = $bdd->prepare($reqVerif);   
     $reqV -> execute (array($email)); 
-    $userExist = $reqV -> rowCount();   
+    $userExist = $reqV -> rowCount();  
+     
         if ($userExist === 1){
             $info = $bdd->prepare($reqVerif); 
             $info = $bdd->query($reqVerif); 
