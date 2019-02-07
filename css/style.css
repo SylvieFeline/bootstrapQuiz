@@ -19,6 +19,10 @@ nav, .btn{
     margin: 1rem 0;
     border-radius: 1rem;
 }
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: blue;
+}
 .btn-blue {
     background-color: blue;
     color: white;

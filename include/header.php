@@ -1,3 +1,4 @@
+<?php //echo $_SERVER['REQUEST_URI']; ?>
 
 <div class="row ">
 
@@ -19,9 +20,9 @@
     
 </div>
 
-<!-- <div class="row col-12">
-   <p class="text-center"> <?php  // if(isset($_SESSION['erreurConnect'])){echo $_SESSION['erreurConnect']; } ?> </p>
-</div> -->
+<div class="row col-12">
+   <p class="text-center"> <?php   if(isset($_SESSION['erreurConnect'])){echo $_SESSION['erreurConnect']; } ?> </p>
+</div>
 
 
     <nav class="navbar bg-white navbar-expand-md sticky-top">
@@ -35,26 +36,26 @@
         </button>
 
         <div class="collapse navbar-collapse space-bet-md" id="collapsibleNavbar">
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav nav-pills">
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="../php/accueil.php">Accueil</a>
+                        <a class="nav-link " id="accueil" href="../php/accueil.php" >Accueil</a>
                     </li>
             
                 <?php  if (isset($_SESSION['pseudoMembre'])) {
                     echo '<li class="nav-item">';
-                        echo '<a class="nav-link" href="../php/profil.php">Mon profil</a>';
+                        echo '<a class="nav-link" id="prof" href="../php/profil.php">Mon profil</a>';
                     echo '</li>';
                     echo '<li class="nav-item">';
-                        echo '<a class="nav-link" href="../php/creation.php">Créer un quiz</a>';
+                        echo '<a class="nav-link" id="creaQ" href="../php/creation.php">Créer un quiz</a>';
                     echo '</li>';
                     echo '<li class="nav-item">';
-                        echo '<a class="nav-link" href="../request/reqQuizMembre.php">Mes quiz</a>'; 
+                        echo '<a class="nav-link" id="quizM" href="../request/reqQuizMembre.php">Mes quiz</a>'; 
                     echo '</li>';
                 }?>
                 <?php if ((isset($_SESSION['pseudoMembre'])) && ($_SESSION['statutMembre'] == 1)) { 
                     echo '<li class="nav-item">';
-                        echo '<a class="nav-link" href="../php/gestion.php">Gestion</a> '; 
+                        echo '<a class="nav-link" id="gestion" href="../php/gestion.php">Gestion</a> '; 
                     echo '</li>';
                 } ?> 
             </ul>

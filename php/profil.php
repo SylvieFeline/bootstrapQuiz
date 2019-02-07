@@ -107,6 +107,7 @@
 
     
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
     <script src="../js/inscript.js"></script>
 </body>
 </html>
