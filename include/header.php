@@ -20,11 +20,6 @@
     
 </div>
 
-<div class="row col-12">
-   <p class="text-center"> <?php   if(isset($_SESSION['erreurConnect'])){echo $_SESSION['erreurConnect']; } ?> </p>
-</div>
-
-
     <nav class="navbar bg-white navbar-expand-md sticky-top">
         <a class="navbar-brand" href="#">
         <img src="../img/quiz_petit.png" alt="logo" style="width:60px;"> </a>
@@ -55,7 +50,7 @@
                 }?>
                 <?php if ((isset($_SESSION['pseudoMembre'])) && ($_SESSION['statutMembre'] == 1)) { 
                     echo '<li class="nav-item">';
-                        echo '<a class="nav-link" id="gestion" href="../php/gestion.php">Gestion</a> '; 
+                        echo '<a class="nav-link" id="gestion" href="../request/reqGestion.php">Gestion</a> '; 
                     echo '</li>';
                 } ?> 
             </ul>

@@ -1,12 +1,9 @@
 <?php session_start(); 
-function quizAVal(){
-    include("logbdd.php");
-    $requete = $bdd-> query('SELECT *,DATE_FORMAT(date_modif_quiz, "%d/%m/%Y à %Hh%imin%ss") AS dateModif FROM quiz WHERE id_statutQuiz = 1 ORDER BY date_modif_quiz');
-    while ($data = $requete -> fetch()){
-        echo "<option value=\"".$data['id_quiz']."\" >".$data['titre_quiz']." - ".$data['dateModif']. "</option>";
-	}
-}
+
+ $nbreQ = $_SESSION['nbreQval'];
+    
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -36,8 +33,10 @@ function quizAVal(){
                         <div class="form-group">
                             <label for="quiz ">Liste des quiz à valider : </label>
                             <select class="form-group custom-select" name="quizVal" required >
-                                <option checked></option>
-                                    
+                                <option checked>Choisir un quiz à valider</option>
+                                <?php  
+                                for($q=0; $q<$nbreQ ; $q++){
+                                echo "<option value=\"".$_SESSION['valQuiz']['id_quiz'][$q]."\" >".$_SESSION['valQuiz']['titre_quiz'][$q]." du ".$_SESSION['valQuiz']['dateModif'][$q]. "</option>";}  ?>   
                             </select>
                         </div>
                         <input class="btn btn-block btn-lg" type="submit" value="Voir le quiz sélectionné">
