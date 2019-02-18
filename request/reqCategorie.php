@@ -1,8 +1,8 @@
 <?php
-session_start();
+//session_start();
 
 // connection à la base de données
-include("logbdd.php"); 
+//include("logbdd.php"); 
 
 // requete de sélection des catégories de quiz
 $requeteCat = 'SELECT * FROM categorie';
@@ -25,7 +25,7 @@ $_SESSION['categorie']['idCategorie'] = array();
 $_SESSION['categorie']['nomCategorie'] = array();
 
 /// insertion des données dans les tableaux
-for($i=0; $i<$nbreCat; $i++){
+for($c=0; $c<$nbreCat; $c++){
     array_push($_SESSION['categorie']['idCategorie'],$idCateg[$c]);
     array_push($_SESSION['categorie']['nomCategorie'],$nomCateg[$c]);
 }

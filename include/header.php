@@ -2,19 +2,24 @@
 
 <div class="row ">
 
-    <div class="col-2 "> </div>
+    <div class="col-2 icone "> 
+    <?php if(isset($_SESSION['pseudoMembre'])){
+         echo '<img class="img-fluid " src="../img/person-icone.png" alt="icone personnage" style="width:150px" >';
+         echo '<p class="text-center ">'. $_SESSION["pseudoMembre"].' </p>';
+    }?>
+    </div>
 
-    <div class="col-8" id="logo">
+    <div class="col-8 pad" id="logo">
         <img class="img-fluid" src="../img/quiz.png" alt="logo quiz" >
     </div>
 
     <div class=" col-2 icone" id="connexion">
         <?php if(isset($_SESSION['pseudoMembre'])){
-            echo "<a href='../request/deconnection.php'><img class='img-fluid' src='../img/logout.png' alt='icone déconnection'></a>";
-            echo '<p class="text-center">'. $_SESSION["pseudoMembre"].' </p>';
+            echo "<a href='../request/deconnection.php'><img class='img-fluid' src='../img/logout.png' alt='icone déconnection' style='width:150px'></a>";
+            echo '<p class="d-none d-md-block text-center">déconnection </p>';
         } else { 
-            echo '<img class="img-fluid" src="../img/person-icone.png" alt="icone personnage" data-toggle="modal" data-target="#connectModal">';          
-            echo '<p class="text-center">connection </p>';
+            echo '<img class="img-fluid marg-md" src="../img/login.png" alt="icone connection" data-toggle="modal" data-target="#connectModal">';          
+            echo '<p class="d-none d-md-block text-center">connection </p>';
         } ?>        
     </div>
     
@@ -34,7 +39,7 @@
             <ul class="navbar-nav nav-pills">
                 
                     <li class="nav-item">
-                        <a class="nav-link " id="accueil" href="../php/accueil.php" >Accueil</a>
+                        <a class="nav-link " id="accueil" href="../request/reqQuizEnLigne.php" >Quiz</a>
                     </li>
             
                 <?php  if (isset($_SESSION['pseudoMembre'])) {

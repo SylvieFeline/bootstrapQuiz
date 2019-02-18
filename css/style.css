@@ -4,16 +4,26 @@ body{
     min-height: 100vh;
 }
 header, footer{
-    padding: 1rem 0;
+    padding: 1rem ;
 }
 .container{
     background-image: linear-gradient(to bottom,rgb(139, 139, 248),rgb(209, 209, 245));  
+    padding: 0;
+}
+footer{
+    background-image: linear-gradient(to bottom,rgb(209, 209, 245),rgb(139, 139, 248));  
 }
 section{
     min-height: 60vh;
 }
 header .icone{
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding-left: 8px;
+    padding-right: 8px;
+
 }
 nav, .btn{
     margin: 1rem 0;
@@ -38,15 +48,24 @@ nav, .btn{
         display: flex;
         justify-content: space-between;
     }
+    .marg-md{
+        margin-top: 1em;
+    }
 }
 @media (max-width: 767.98px) {
     .w80{
         width: 80%;
     }
+    .font{
+        font-size: 2em;
+    }
+    .font2{
+        font-size: 1em;
+    }
 }
-h1{
+h1, h4{
     text-align: center;
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
     color : blue;
 }
 strong{
@@ -66,9 +85,21 @@ input[type=submit]{
     padding: 10px 10px 0 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 255, 0.5);
 }
 .marg{
-    margin: 10px 10px;
+    margin: 10px;
+}
+.marhb{
+    margin: 1rem 0;
+}
+.pad{
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.pad-b{
+    padding-bottom: 10px;
 }
 .bg-bl{
     background-color: rgb(209, 209, 245);
@@ -81,4 +112,40 @@ input[type=submit]{
 }
 .black{
     color:black;
+}
+.categ{
+    background-color: blue;
+    color: white;
+    border-color: blue;
+    padding: 10px 5px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+.listQ{
+    background-color: white;
+    color: blue;
+    border-color: blue;
+    padding: 10px 5px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    display: none;
+    text-align: left;
+}
+.close{
+    margin-right: 20px;
+}
+ul{
+    margin-bottom: 0;
+}
+.bRep{
+    color : green;
+}
+.mRep{
+    color: red;
+}
+.ch{
+    background-color: rgba(255, 255, 255, 0.5);
 }

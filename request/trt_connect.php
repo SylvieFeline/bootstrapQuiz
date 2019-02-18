@@ -39,7 +39,7 @@ if ((isset($_POST['email']) && !empty($_POST['email'])) AND
                 $_SESSION['statutMembre'] = $infoMembre['id_statutMembre'];
             
                 // redirection vers  page d'accueil
-                header ('location: ../php/accueil.php');
+                header ('location: ../request/reqQuizEnLigne.php');
             
         } else {
             echo "connection impossible, mail et/ou mot de passe incorrects";

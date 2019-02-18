@@ -17,11 +17,7 @@
     <div class="container">
 
         <header>
-            <?php include ("../include/header.php");  
-            $_SESSION['titre'] = "Culture générale 1";
-            $_SESSION['idQuiz'] = 4;
-            
-            ?>
+            <?php include ("../include/header.php");   ?>
         </header>
 
         <section class="row justify-content-center">
