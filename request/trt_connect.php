@@ -30,7 +30,7 @@ if ((isset($_POST['email']) && !empty($_POST['email'])) AND
             $mdpHash = $infoMembre['password_membre'];
             if (password_verify($mdp,$mdpHash)) {
             
-                // si ok, on souvegarde les données du membre dans la session
+                // si ok, on sauvegarde les données du membre dans la session
                 $_SESSION['idMembre'] = $infoMembre['id_membre'];
                 $_SESSION['nomMembre'] = $infoMembre['nom_membre'];
                 $_SESSION['prenomMembre'] = $infoMembre['prenom_membre'];

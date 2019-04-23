@@ -15,7 +15,7 @@ if (isset($_POST['titre']) && !empty($_POST['titre'])){
     $titre = htmlspecialchars($_POST['titre']);
     $_SESSION['titre'] = $titre;
 
-    $reqMajTitre = "UPDATE quiz SET titre_quiz = '".$titre."' WHERE id_quiz =".$idQuiz;
+    $reqMajTitre = "UPDATE quiz SET titre_quiz = '".$titre."', date_modif_quiz = NOW() WHERE id_quiz =".$idQuiz;
     $reqMajT = $bdd->prepare($reqMajTitre);   
     $reqMajT = $bdd->exec($reqMajTitre); 
     
@@ -53,7 +53,7 @@ if (isset($_POST['titre']) && !empty($_POST['titre'])){
     $_SESSION['messageModifQuiz'] = "Une erreur est survenue et vos modifications n'ont pas été enregistrées.";
 }
 
-// redirection vers page vérification du quiz
- header ('location: ../php/quiz.php');
+// redirection vers page quiz.php ou quizM.php
+ header ('location: ../php/'.$_POST["page"]);
 
 

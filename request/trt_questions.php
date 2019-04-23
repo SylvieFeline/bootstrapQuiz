@@ -21,6 +21,11 @@ if (isset($_POST['question']) && !empty($_POST['question'])) {
 // connection à la base de données
     include("logbdd.php"); 
 
+// requete de changement date modif du quiz
+    $reqModif = "UPDATE quiz SET date_modif_quiz = NOW() WHERE id_quiz =".$idQuiz;
+    $reqM = $bdd->prepare($reqModif);   
+    $reqM = $bdd->exec($reqModif);
+
 // requete insertion du libellé de la question dans la base de données
     $requete0 = 'INSERT INTO question VALUES ("","'.$question.'","'.$idQuiz.'")';
 
@@ -49,8 +54,8 @@ if (isset($_POST['question']) && !empty($_POST['question'])) {
     //     echo "boléen = ".$idBoleen[$i]."<br>";
     // }
 
-// redirection vers page création questions
-  header ('location: ../php/questions.php');
+// redirection vers page création questions ou quizM.php
+  header ('location: ../'.$_POST['page']);
 
 
 }

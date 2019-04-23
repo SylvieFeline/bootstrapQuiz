@@ -20,6 +20,8 @@
             <?php include ("../include/header.php");   ?>
         </header>
 
+            <?php include ("../include/menu.php"); ?>
+
         <section class="row justify-content-center">
             <div class="col-10">
                 <h1 > Création d'un quiz</h1>
@@ -32,26 +34,9 @@
                 en précisant s'il s'agit de la bonne réponse ou pas :</p>
             
 
-                <form action="../request/trt_questions.php" method="post">
-
-                    <div class="form-group">
-                        <label for="question">Libellé de la question : </label>
-                        <input type="text" name="question" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="nombreChoix">Sélectionner le nombre de propositions : </label>
-                        <select class="form-group" name="nbreChoix" id="nbreChoix" required >
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
-                    </div>
-                    <div id="afficheChoix"></div>
+               <?php  include ("../include/ajoutQuestion.php");   ?>
                     
-
+                    <input type="hidden" name="page" value="php/quizM.php">
                     <input class="btn btn-block btn-lg" type="submit" value="Enregistrer">
                 </form>
                 

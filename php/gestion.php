@@ -25,6 +25,8 @@
             <?php include ("../include/header.php");  ?>
         </header>
 
+            <?php include ("../include/menu.php"); ?>
+
         <section class="row justify-content-center">
             <div class="col-10">
 
@@ -52,7 +54,7 @@
                                  <?php 
                                 
                                     for($n=0; $n<$nbreQel ; $n++){
-                                        echo "<option value=\"".$_SESSION['listQuizEL']['id_quiz'][$n]."\" >".$_SESSION['listQuizEL']['titre_quiz'][$n]." dernière modif du ".$_SESSION['listQuizEL']['dateModif'][$n]. "</option>";
+                                        echo "<option value=\"".$_SESSION['listQuizEL']['id_quiz'][$n]."\" >".$_SESSION['listQuizEL']['titre_quiz'][$n]." - dernière modif du ".$_SESSION['listQuizEL']['dateModif'][$n]. "</option>";
                                     }    
                                 ?>  
                             </select>

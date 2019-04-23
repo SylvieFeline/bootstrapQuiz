@@ -20,6 +20,8 @@
             <?php include ("../include/header.php");  ?>
         </header>
 
+            <?php include ("../include/menu.php"); ?>
+
         <section class="row justify-content-center">
             <div class="col-10">
                 <h1> Création d'un quiz</h1>

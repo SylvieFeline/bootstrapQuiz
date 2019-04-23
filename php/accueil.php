@@ -20,6 +20,8 @@
             <?php include("../include/header.php");  ?>
         </header>
 
+            <?php include ("../include/menu.php"); ?>
+
         <section class="row">
             <div class="offset-1 col-10">
             <?php echo "Bienvenue ".$_SESSION['prenomMembre']." ".$_SESSION['nomMembre']; ?>

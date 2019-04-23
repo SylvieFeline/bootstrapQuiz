@@ -20,6 +20,8 @@
             <?php include ("../include/header.php");  ?>
         </header>
 
+            <?php include ("../include/menu.php"); ?>
+
         <section class="row justify-content-center">
             <div class="col-10">
                 <h1>Mes Quiz</h1>
@@ -39,7 +41,7 @@
                                 echo "<div class='row form-group marg bg-bl'><div class='col-md-4 '>Classé dans la catégorie : </div><div class='col-md-8 text-center black'>".$quiz['nomCategorie'][$i]."</div></div>";
                                 echo "<div class='row form-group marg bg-bl'><div class='col-md-4 '>Statut actuel du quiz : </div><div class='col-md-8 text-center black'>".$quiz['nomStatut'][$i]."</div></div>";
                                 echo "<form action='../request/trt_quizM.php' method='post'>";
-                                echo "<input type=\"hidden\" name=\"idQ".[$i]."\" value=\"".$quiz['idQuiz'][$i]."\" >";
+                                echo "<input type=\"hidden\" name='idQ' value=\"".$quiz['idQuiz'][$i]."\" >";
                                 echo "<input class='btn btn-block btn-blue btn-lg' type='submit'  value='Voir le quiz'>";
                                 echo "</form>";
                             echo "</div>";

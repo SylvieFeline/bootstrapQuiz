@@ -25,25 +25,41 @@
         <section class="row justify-content-center">
             <div class="col-10">
 
-                <p>Veuillez vérifier vos saisies avant de transmettre votre quiz à la validation : </p>
+                <p>Vous pouvez apporter des modifications à votre quiz  et y <a href="#ajoutQuest">ajouter des questions</a> </p>
 
                 <?php include ("../include/chgQuiz.php"); ?>
 
-                    <input type="hidden" name="page" value="quiz.php">
+                    <input type="hidden" name="page" value="quizM.php">
                     <input class="btn btn-block btn-lg" type="submit" value="Enregistrer les modifications">
                 </form>
-                <?php echo $_SESSION['messageModifQuiz']; ?>
-               
+                <div class="col-10 brep"> 
+                    <?php echo $_SESSION['messageModifQuiz']; ?>
+                </div>
+            </div>
+            <div id="ajoutQuest" class="col-10">
 
-                <form action="../request/envoiQuiz.php" method="post">
+                <p> Ajouter des questions :</p>
+              
+                <?php  include ("../include/ajoutQuestion.php");   ?>
+                    <input type="hidden" name="page" value="request/trt_quizM2.php">
+                    <input class="btn btn-block btn-lg" type="submit" value="Enregistrer">
+                </form>
+                <div class="col-10 mrep"> 
+                    <?php echo $_SESSION['messageModifStatut'] ?>
+                </div>
+
+            </div>
+            <div class="col-10">
+                <form action="../request/envoiQuizM.php" method="post">
                     <div class="form-group">
                         <label for="commentaire">Ajouter un  commentaire (facultatif) :</label>
                         <textarea class="form-control" name="commentaire" rows="3"></textarea>
                     </div>
                     <input class="btn btn-block btn-blue btn-lg" type="submit" value="Transmettre pour validation">
                 </form>
-                <?php echo $_SESSION['messageConfEnvoiQuiz']; ?>
-
+                <div class="col-10 brep"> 
+                    <?php echo $_SESSION['messageConfEnvoiQuizM']; ?>
+                </div>
             </div>
         </section>
 
@@ -56,5 +72,6 @@
     
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/questions.js"></script>$idQuiz
 </body>
 </html>
